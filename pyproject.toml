@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "jarvis"
+version = "0.1.0"
+description = "Double-clap activated voice assistant for macOS"
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "sounddevice",
+]
+
+[project.scripts]
+jarvis = "jarvis.__main__:main"
