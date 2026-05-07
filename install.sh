@@ -53,8 +53,17 @@ launchctl load "$PLIST"
 
 python3 -c "from jarvis.config import load; load()"
 
+echo ""
+echo "Almost done! Jarvis needs microphone access to detect claps."
+echo "A permission prompt will appear — click Allow, then press Enter here to continue."
+echo ""
+jarvis &
+JARVIS_PID=$!
+read -r _
+kill $JARVIS_PID 2>/dev/null || true
+
 open -a TextEdit "$HOME/.jarvis/config.json"
 
 echo ""
-echo "Jarvis installed and running. It will start automatically on every login."
-echo "Your config file has opened in TextEdit — add your Spotify URI and apps, then save."
+echo "Jarvis installed. It will start automatically on every login."
+echo "Your config file has opened in TextEdit — edit apps and voice, then save."
