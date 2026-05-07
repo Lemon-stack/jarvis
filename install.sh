@@ -51,11 +51,7 @@ EOF
 
 launchctl load "$PLIST"
 
-# trigger config file creation then open it
-jarvis &
-JARVIS_PID=$!
-sleep 2
-kill $JARVIS_PID 2>/dev/null
+python3 -c "from jarvis.config import load; load()"
 
 open -a TextEdit "$HOME/.jarvis/config.json"
 

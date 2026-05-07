@@ -7,11 +7,9 @@ CONFIG_PATH = CONFIG_DIR / "config.json"
 DEFAULTS = {
     "_help": {
         "apps": "List of Mac apps to open on trigger. Example: [\"Spotify\", \"Chrome\"]",
-        "spotify_track_uri": "Right-click a song in Spotify > Share > Copy Song Link. Paste the URI here.",
         "voice": "Mac voice to use. Options: Daniel, Alex, Samantha, Karen, Moira"
     },
     "apps": ["Spotify"],
-    "spotify_track_uri": "",
     "voice": "Daniel",
 }
 
