@@ -51,8 +51,14 @@ EOF
 
 launchctl load "$PLIST"
 
+# trigger config file creation then open it
+jarvis &
+JARVIS_PID=$!
+sleep 2
+kill $JARVIS_PID 2>/dev/null
+
+open -a TextEdit "$HOME/.jarvis/config.json"
+
 echo ""
 echo "Jarvis installed and running. It will start automatically on every login."
-echo ""
-echo "Your config file is at:  ~/.jarvis/config.json"
-echo "Open it in TextEdit to change which apps Jarvis opens."
+echo "Your config file has opened in TextEdit — add your Spotify URI and apps, then save."
